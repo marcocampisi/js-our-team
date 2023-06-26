@@ -49,9 +49,16 @@ for (let i = 0; i < teamMembers.length; i++) {
     const memberInfo = document.createElement('div');
     memberInfo.classList.add('py-3')
     for (let key in member) {
-        const memberParagraph = document.createElement('p');
-        memberParagraph.textContent = `${key} : ${member[key]}`;
-        memberInfo.appendChild(memberParagraph);
+        if (key !== 'foto') {
+            const memberParagraph = document.createElement('p');
+            memberParagraph.textContent = `${key} : ${member[key]}`;
+            memberInfo.appendChild(memberParagraph);
+        }
     }
+    //BONUS 1
+    const img = document.createElement("img");
+    img.src = '../img/' + member.foto;
+    memberInfo.appendChild(img);
+
     teamContainer.appendChild(memberInfo);
 }
