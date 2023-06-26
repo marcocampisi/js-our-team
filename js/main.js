@@ -33,10 +33,25 @@ const teamMembers = [
 ];
 
 //MILESTONE 1
+// for (let i = 0; i < teamMembers.length; i++) {
+//     const member = teamMembers[i];
+//     console.log(`Nome: ${member.nome}`);
+//     console.log(`Ruolo: ${member.ruolo}`);
+//     console.log(`Foto: ${member.foto}`);
+//     console.log("\n");
+// }
+
+//MILESTONE 2
+const teamContainer = document.getElementById('team-container');
+
 for (let i = 0; i < teamMembers.length; i++) {
     const member = teamMembers[i];
-    console.log(`Nome: ${member.nome}`);
-    console.log(`Ruolo: ${member.ruolo}`);
-    console.log(`Foto: ${member.foto}`);
-    console.log("\n");
+    const memberInfo = document.createElement('div');
+    memberInfo.classList.add('py-3')
+    for (let key in member) {
+        const memberParagraph = document.createElement('p');
+        memberParagraph.textContent = `${key} : ${member[key]}`;
+        memberInfo.appendChild(memberParagraph);
+    }
+    teamContainer.appendChild(memberInfo);
 }
