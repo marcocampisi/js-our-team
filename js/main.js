@@ -1,3 +1,4 @@
+//MILESTONE 0
 const teamMembers = [
     {
     nome: "Wayne Barnett",
@@ -30,3 +31,12 @@ const teamMembers = [
     foto: "barbara-ramos-graphic-designer.jpg"
     }
 ];
+
+//MILESTONE 1
+for (let i = 0; i < teamMembers.length; i++) {
+    const member = teamMembers[i];
+    console.log(`Nome: ${member.nome}`);
+    console.log(`Ruolo: ${member.ruolo}`);
+    console.log(`Foto: ${member.foto}`);
+    console.log("\n");
+}
