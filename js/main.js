@@ -44,21 +44,35 @@ const teamMembers = [
 //MILESTONE 2
 const teamContainer = document.getElementById('team-container');
 
+let currentRow;
+
 for (let i = 0; i < teamMembers.length; i++) {
     const member = teamMembers[i];
-    const memberInfo = document.createElement('div');
-    memberInfo.classList.add('py-3')
+
+    if (i % 3 === 0) {
+    currentRow = document.createElement('div');
+    currentRow.classList.add('row');
+    teamContainer.appendChild(currentRow);
+  }
+
+    const card = document.createElement('div');
+    card.classList.add('card', 'col', 'm-4');
+
+    const cardBody = document.createElement('div');
+    cardBody.classList.add('card-body', 'text-center');
+
     for (let key in member) {
         if (key !== 'foto') {
             const memberParagraph = document.createElement('p');
-            memberParagraph.textContent = `${key} : ${member[key]}`;
-            memberInfo.appendChild(memberParagraph);
+            memberParagraph.textContent = member[key];
+            cardBody.appendChild(memberParagraph);
         }
     }
-    //BONUS 1
-    const img = document.createElement("img");
+    const img = document.createElement('img');
     img.src = '../img/' + member.foto;
-    memberInfo.appendChild(img);
+    img.classList.add('card-img-top');
 
-    teamContainer.appendChild(memberInfo);
+    card.appendChild(img);
+    card.appendChild(cardBody);
+    currentRow.appendChild(card);
 }

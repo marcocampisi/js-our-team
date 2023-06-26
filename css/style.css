@@ -1,2 +1,9 @@
 @import "reset.css";
 @import "general.css";
+@import url('https://fonts.googleapis.com/css2?family=Belanosima:wght@400;700&display=swap');
+
+/* MAIN */
+
+* {
+    font-family: 'Belanosima', sans-serif;
+}
