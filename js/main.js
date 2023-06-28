@@ -69,7 +69,7 @@ for (let i = 0; i < teamMembers.length; i++) {
         }
     }
     const img = document.createElement('img');
-    img.src = '../img/' + member.foto;
+    img.src = 'img/' + member.foto;
     img.classList.add('card-img-top');
 
     card.appendChild(img);
